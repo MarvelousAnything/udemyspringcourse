@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
+    <!-- Define Beans Here -->
+    <bean id="myFortune" class="com.thearchermancoding.udemyspringcourse.fortune.HappyFortuneService"/>
+    <bean id="myCoach" class="com.thearchermancoding.udemyspringcourse.coach.TrackCoach"><constructor-arg ref="myFortune"/></bean>
+    <bean id="myCricketCoach" class="com.thearchermancoding.udemyspringcourse.coach.CricketCoach">
+        <property name="fortuneService" ref="myFortune"/>
+        <property name="email" value="human@bean.com"/>
+        <property name="team" value="A team"/>
+    </bean>
+</beans>
