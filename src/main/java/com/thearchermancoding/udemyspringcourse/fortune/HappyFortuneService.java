@@ -1,8 +1,14 @@
 package com.thearchermancoding.udemyspringcourse.fortune;
 
+import java.util.Random;
+
 public class HappyFortuneService implements FortuneService {
+
+    private String[] fortunes = {"A", "B", "C"};
+
     @Override
     public String getFortune() {
-        return "The world is ending in two seconds...";
+        int index = new Random().nextInt(fortunes.length);
+        return fortunes[index];
     }
 }
